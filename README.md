@@ -27,7 +27,7 @@ seXtouch is a json file for [MIDImod](https://github.com/kdgdkd/MIDImod), which 
     ```
 ### Using seXtouch with MIDImaster
 
-[MIDImaster](https://github.com/kdgdkd/MIDImaster)  is a rather crude python clock intended for testing. It will accept transport signals coming from the X-touch. For this to work, you will need to copy the sextouch_mm.json file into the MIDImaster rules folder. Then you can open MIDImaster using that rules file, and it will read input from the X-touch.  
+[MIDImaster](https://github.com/kdgdkd/MIDImaster)  is a rather crude python clock intended for testing. It will accept transport signals coming from the X-touch. For this to work, you will need to copy the seXtouch_CLOCK.json file into the MIDImaster rules folder. Then you can open MIDImaster using that rules file, and it will read input from the X-touch.  
 On Windows, we will need two different virtual ports. I use midiLoops to create a CLOCK port (from MIDImaster to the X-touch) and a TPT port (from X-touch to MIDImaster). If you use different ones, you will need to update the names in the devices section in the jsons.   
 With this implementation, you can send start, stop and set the BPM of the sequencer's clock.
 
