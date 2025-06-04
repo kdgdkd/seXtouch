@@ -17,6 +17,7 @@ seXtouch is a json file for [MIDImod](https://github.com/kdgdkd/MIDImod), which 
 
 ## Installation & Setup
 
+0.  Load the bin templates for Layers A and B into the X-touch mini with the X-TOUCH Editor.
 1.  Ensure you have [MIDImod](https://github.com/kdgdkd/MIDImod) set up and working.
 2.  Copy the seXtouch JSON file into the `rules` directory used by MIDImod.
 3.  Configure seXtouch's `device_alias` in the JSON files to match the MIDI port names of your clock source and your desired output. 
