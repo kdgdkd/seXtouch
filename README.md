@@ -53,7 +53,7 @@ D. Pushing on the fifth knob will enter "config mode". The ring of the knob will
 6. Sixth knob allows to choose between scales. Some scales are predefined in MIDImod, some directly on the json, feel free to tinker.  
 7. Seventh knob is the global transposition.
 
-E. The sixth push button is to send a stop signal to the clock (if, as MIDImaster, can at a time be master clock and receive transport signals)
+E. The sixth push button sends a stop signal to the clock (if, as MIDImaster, can at a time be master clock and receive transport signals)
 F. The seventh push button is to send a start signal to the clock.
 G. The eight push button reinitalizes everything.
 
