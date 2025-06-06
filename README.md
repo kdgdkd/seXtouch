@@ -1,8 +1,8 @@
 # seXtouch - X-touch Mini Sequencer
 
-**seXtouch** will turn your Behringer X-touch mini (which is a nice 8 fader & 16 buttons MIDI controller) into a 16 step sequencer. 
+**seXtouch** will turn your Behringer X-touch mini into a 16 step sequencer. 
 
-seXtouch is a json file for [MIDImod](https://github.com/kdgdkd/MIDImod), which runs on python. 
+seXtouch is a json rules file for [MIDImod](https://github.com/kdgdkd/MIDImod), which runs on python. 
 
 
 
@@ -26,11 +26,23 @@ seXtouch is a json file for [MIDImod](https://github.com/kdgdkd/MIDImod), which 
     ```bash
     python midimod.py sextouch
     ```
-### Using seXtouch with MIDImaster
+
+### About the master clock
+
+seXtouch requires an external MIDI clock singal. External hardware clocks are better than software, but they are usually either master or slave clocks... If you use seXtouch with a master clock that receives transport signals, you will be able to start and top the sequencer directly from the X-touch mini.
+
+
+
+#### Using seXtouch with MIDImaster
 
 [MIDImaster](https://github.com/kdgdkd/MIDImaster)  is a rather crude python clock intended for testing. It will accept transport signals coming from the X-touch. For this to work, you will need to copy the seXtouch_CLOCK.json file into the MIDImaster rules folder. Then you can open MIDImaster using that rules file, and it will read input from the X-touch.  
 On Windows, we will need two different virtual ports. I use midiLoops to create a CLOCK port (from MIDImaster to the X-touch) and a TPT port (from X-touch to MIDImaster). If you use different ones, you will need to update the names in the devices section in the jsons.   
 With this implementation, you can send start, stop and set the BPM of the sequencer's clock directly from the X-touch mini.
+
+
+#### Using seXtouch with any other master clock
+
+You can configure any other master midi clock. You will need to update the device_alias section in the json rules file, so seXtouch knows which device to listen to. If you use a master clock that receives transport MIDI signals (start and stop), you can map them in the json (easy to find: these are the last two blocks in the file). 
 
 
 ## How to use seXtouch
