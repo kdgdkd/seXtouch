@@ -1,6 +1,6 @@
 # seXtouch - X-touch Mini Sequencer
 
-**seXtouch** will turn your Behringer X-touch mini (which is a nice 8 fader & 16 buttons MIDI controller) into a 16 step sequencer. I have no relation with Behringer, just a happy customer.
+**seXtouch** will turn your Behringer X-touch mini (which is a nice 8 fader & 16 buttons MIDI controller) into a 16 step sequencer. 
 
 seXtouch is a json file for [MIDImod](https://github.com/kdgdkd/MIDImod), which runs on python. 
 
@@ -30,7 +30,7 @@ seXtouch is a json file for [MIDImod](https://github.com/kdgdkd/MIDImod), which 
 
 [MIDImaster](https://github.com/kdgdkd/MIDImaster)  is a rather crude python clock intended for testing. It will accept transport signals coming from the X-touch. For this to work, you will need to copy the seXtouch_CLOCK.json file into the MIDImaster rules folder. Then you can open MIDImaster using that rules file, and it will read input from the X-touch.  
 On Windows, we will need two different virtual ports. I use midiLoops to create a CLOCK port (from MIDImaster to the X-touch) and a TPT port (from X-touch to MIDImaster). If you use different ones, you will need to update the names in the devices section in the jsons.   
-With this implementation, you can send start, stop and set the BPM of the sequencer's clock.
+With this implementation, you can send start, stop and set the BPM of the sequencer's clock directly from the X-touch mini.
 
 
 ## How to use seXtouch
@@ -59,6 +59,16 @@ G. The eight push button reinitalizes everything.
 
 If you use MIDImaster, the fader controls the bpm. But you may want to change slightly the code, so it actually sends some kind of CC (say CC7 to control the volume) to the receiving gear.
 
+## On another control surface
+I would like to think that this project is easily adaptable for other MIDI control surfaces. The main challenge would be sending feedback to the control surface to manage the lights to show the advance of the step sequencer; this may work in very different ways depending on the device, but it is rather easy with the X-touch mini, and well documented in the manual.   
+seXtouch's MIDI configuration for the X-touch Mini is very simple:
+** The 16 buttons send notes 0 to 15 on both layers
+** The 16 knobs send CCs 0-15 (8 per layer)
+** The 16 push knobs send notes 36-51 (8 per layer)
+** The fader sennds CC 127 on both layers, it is used to control the BPM
+Note that the 16 buttons used to show the steps in the sequencer are toggle buttons, while the push knobs are momentary buttons. 
 
+## Final say
+Of course, all contributions super welcome. Enjoy. Do things.
 
 
